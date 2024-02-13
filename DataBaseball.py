@@ -65,7 +65,7 @@ def find(input_name):
     # There are no potential matches.
     else:
         print(f"\nDataBaseball was unable to find {input_name}.\n"
-              f"Please try again or press 0 to return to the starting menu.\n")
+              f"Please try again.\n")
 
 
 # Uses the player's name to obtain a playerID that is used to search each category.
@@ -104,9 +104,12 @@ def display_player_stats(playerID):
             print(player_records.to_string(index=False))
 
 
+print("Welcome to DataBaseball! If an MLB player's name is entered, then their stats for the year will be shown.")
 # Starting menu that allows input.
 while True:
-    player_input = input("Enter the player's name (can be first, last, or both): ")
+    player_input = input(f"Please enter an MLB player's full name (Partial inputs can be taken)." 
+                         " Press 0 to exit the program. ")
+
     if player_input == "0":
         break
     find(player_input)
